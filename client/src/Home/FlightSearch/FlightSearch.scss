@@ -1,0 +1,77 @@
+.flight-search-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    color: #6a0dad;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .flight-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    .input-group {
+      display: flex;
+      align-items: center;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      
+      .icon {
+        color: #6a0dad;
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      input {
+        border: none;
+        background: none;
+        font-size: 1rem;
+        flex-grow: 1;
+      }
+
+      input[type="date"] {
+        width: 150px;
+      }
+    }
+
+    .search-btn {
+      background-color: #6a0dad;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #5a0c9d;
+      }
+    }
+  }
+
+  .trip-type {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #f7f7f7;
+      color: #6a0dad;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &.active {
+        background-color: #6a0dad;
+        color: white;
+      }
+    }
+  }
+}

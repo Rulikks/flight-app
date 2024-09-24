@@ -1,0 +1,187 @@
+.flight-results-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  .filter-section {
+    width: 25%;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    position: sticky; /* Scroll ile sabit kalacak */
+    top: 1rem; /* Üstten mesafe */
+    transition: background-color 0.3s ease; /* Scroll ile bulanıklığın azalması için animasyon */
+
+    /* Sayfa kaydırıldıkça bulanıklığın azaldığı efekt */
+   
+    h3 {
+      font-size: 1rem;
+      color: #8338ec;
+      margin-bottom: 1rem;
+    }
+
+    /* Seçim ve radyo butonları */
+    .ant-radio-group,
+    .ant-select {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    /* Radyo kutuları */
+    .ant-radio-wrapper {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Havayolu filtre listesi */
+    .airlines-list {
+      p {
+        font-size: 0.9rem;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+
+        span {
+          color: #8338ec;
+        }
+      }
+    }
+  }
+
+  .results-section {
+    width: 70%;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+
+    .flight-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      position: relative;
+
+      &-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8338ec;
+      }
+
+      .time {
+        font-weight: bold;
+      }
+
+      .breaker {
+        width: 80px;
+        height: 3px;
+        background-color: gray;
+      }
+
+      .flight-info,
+      .airline-info,
+      .arrival-info,
+      .price-info {
+        width: 20%;
+      }
+
+      .airline-info {
+        text-align: center;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        svg {
+          width: 40px;
+          height: 40px;
+          fill: #8338ec;
+        }
+      }
+
+      .price-info {
+        .book-flight-btn {
+          background-color: #8338ec;
+          border: none;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #5c27a3;
+          }
+        }
+      }
+
+      .favorite-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #ccc;
+
+        &.filled {
+          color: #ff0000;
+        }
+
+        &:hover {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+
+  .pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .pagination-button {
+      padding: 7px 15px;
+      border-radius: 3px;
+      background-color: #5c27a3;
+      color: white;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .flight-card-bottom {
+    display: flex;
+    width: 100%;
+
+    .price-info {
+      color: #8338ec;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Poppins;
+    }
+  }
+
+  .book-flight-btn {
+    position: absolute;
+    background-color: #8338ec;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    width: 180px;
+  }
+}

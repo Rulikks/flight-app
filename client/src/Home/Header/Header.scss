@@ -1,0 +1,74 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: transparent;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #6a0dad;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #6a0dad;
+      margin: 0;
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .nav-menu {
+      display: flex;
+      gap: 15px;
+
+      a, .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #6a0dad;
+        font-size: 1.1rem;
+        text-decoration: none;
+        cursor: pointer;
+
+        .icon, .my-flights-icon {
+          color: #6a0dad;
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #6a0dad;
+      }
+    }
+  }
+}

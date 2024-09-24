@@ -1,0 +1,58 @@
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 25%; 
+  margin-left: 20px; 
+
+  .card {
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    .card-image {
+      object-fit: cover;
+      height: 200px;
+      width: 140%; 
+    }
+
+    .card-content {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      .card-icon {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.content-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.left-content {
+  width: 70%; /* İçerik genişliği */
+}
