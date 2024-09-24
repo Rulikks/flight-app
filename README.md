@@ -33,4 +33,8 @@ Moment.js: Tarih ve saat hesaplamaları için.
 React Icons: Uçuş bilgileri için ikonlar kullanılmıştır.
 
 
+<img width="1470" alt="Screenshot 2024-09-24 at 19 40 25" src="https://github.com/user-attachments/assets/084605e9-fd68-440f-aeae-a35733877ebc"><img width="1469" alt="Screenshot 2024-09-24 at 19 40 40" src="https://github.com/user-attachments/assets/f0315fa4-a0ff-4a9f-9e62-f12cfb774a76">
+
+
+
 
