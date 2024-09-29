@@ -15,7 +15,7 @@ const FlightSearch = ({ onChange }) => {
   const [loading, setLoading] = useState(true);
   const [cities, setCities] = useState([]);
   const [departure, setDeparture] = useState(null);
-  const [flightDirection, setFlightDirection] = useState("A");
+  const [isRoundTrip, setIsRoundTrip] = useState(true);
 
   useEffect(() => {
     const getCities = async () => {
@@ -39,12 +39,19 @@ const FlightSearch = ({ onChange }) => {
       toDateTime: toDate && moment(toDate).format("YYYY-MM-DDTHH:mm:ss"),
     });
   };
+
   return (
     <div className="flight-search-container">
-            <h3>Book Your Flight</h3>
-            <div className="trip-type">
-        <button className={"round-trip active"}>Round trip</button>
-        <button className="one-way">One way</button>
+      <h3>Book Your Flight</h3>
+      <div className="trip-type-toggle">
+        <button 
+          className={`toggle-button ${isRoundTrip ? 'active' : ''}`}
+          onClick={() => setIsRoundTrip(!isRoundTrip)}
+        >
+          <span className="round-trip">Round trip</span>
+          <span className="one-way">One way</span>
+          <span className="slider"></span>
+        </button>
       </div>
       {!loading && cities.length > 0 ? (
         <div className="flight-search">
@@ -61,7 +68,7 @@ const FlightSearch = ({ onChange }) => {
           </div>
           <div className="input-group">
             <FaPlaneArrival className="icon" />
-            <Select placeholder="Select a departure city" onChange={(value) => setDeparture(value)}>
+            <Select placeholder="Select an arrival city" onChange={(value) => setDeparture(value)}>
               {cities.map((cityObj, index) => (
                 cityObj.city ?
                 <Option key={index} value={cityObj.city}>
@@ -79,18 +86,20 @@ const FlightSearch = ({ onChange }) => {
               onChange={(e) => setFromDate(e.target.value)}
             />
           </div>
-          <div className="input-group">
-            <FaCalendarAlt className="icon" />
-            <input
-              type="date"
-              value={toDate}
-              min={moment(fromDate || new Date())
-                .add(1, "day")
-                .endOf("hour")
-                .format("YYYY-MM-DD")}
-              onChange={(e) => setToDate(e.target.value)}
-            />
-          </div>
+          {isRoundTrip && (
+            <div className="input-group">
+              <FaCalendarAlt className="icon" />
+              <input
+                type="date"
+                value={toDate}
+                min={moment(fromDate || new Date())
+                  .add(1, "day")
+                  .endOf("hour")
+                  .format("YYYY-MM-DD")}
+                onChange={(e) => setToDate(e.target.value)}
+              />
+            </div>
+          )}
           <button className="search-btn" onClick={submitChange}>
             Show Flights
           </button>
@@ -98,8 +107,6 @@ const FlightSearch = ({ onChange }) => {
       ) : (
         "Loading..."
       )}
-
-     
     </div>
   );
 };

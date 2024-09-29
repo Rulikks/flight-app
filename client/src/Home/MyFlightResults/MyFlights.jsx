@@ -19,7 +19,7 @@ const MyFlights = ({ favorites }) => {
           >
             Recommended
           </button>
-          <button
+          <button 
             className={`filter-btn ${sortBy === "Price" ? "active" : ""}`}
             onClick={() => setSortBy("Price")}
           >
